@@ -70,4 +70,7 @@ def chiMerge(df,col,target,max_groups=None,threshold=None):
             cutoffs = np.delete(cutoffs,minidx+1,0)
         else: #最小卡方值不小于阈值，停止合并。
             break
+    
+    cutoffs = np.append(cutoffs,df[col].max())
+    
     return cutoffs
